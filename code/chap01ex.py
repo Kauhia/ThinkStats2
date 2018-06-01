@@ -13,6 +13,11 @@ import sys
 import nsfg
 import thinkstats2
 
+def ReadFemPreg(dct_file='2002FemPreg.dct', dat_file='2002FemPreg.dat.gz'):
+    dct = thinkstats2.ReadStataDct(dct_file)
+    df = dct.ReadFixedWidth(dat_file, compression='gzip')
+    # CleanFemPreg(df)
+    return df
 
 def main(script):
     """Tests the functions in this module.
